@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="css/toaster.min.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/materialize.min.js" charset="utf-8"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/toaster.min.js"></script>
+
+    <script src="core.js"></script>
+    <title>Todo App</title>
+</head>
+
+<body ng-controller="mainController">
+
+    <nav class="teal lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">TODO App</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href=""><i class="material-icons left">done_all</i>{{ todos.length}}</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+                <li><a href=""><i class="material-icons left">done_all</i>{{ todos.length}}</a></li>
+            </ul>
+            <a href="" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center blue-grey-text">App Todo With AngularJS <span class="badge amount"></span></h1>
+            <div class="row center">
+                <form name="todo">
+                    <p ng-repeat="todo in todos">
+                        <input type="checkbox" class="filled-in" id="filled-in-box" ng-click="deleteTodo(todo._id)" />
+                        <label for="filled-in-box">{{todo.text}}</label>
+                    </p>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">done</i>
+                        <input id="icon_prefix" type="text" class="validate" ng-model="formData.text" required>
+                        <label for="icon_prefix">Add a note</label>
+                    </div>
+            </div>
+            <div class="row center">
+                <button type="submit" ng-disabled="todo.$invalid" ng-click="createTodo()" id="download-button" class="btn-large waves-effect waves-light orange">Add</button>
+            </div>
+            <br><br>
+            </form>
+        </div>
+    </div>
+    <footer class="page-footer blue-grey">
+           <div class="container">
+             <div class="row">
+               <div class="col l6 s12">
+                 <h5 class="white-text">Footer Content</h5>
+                 <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+               </div>
+               <div class="col l4 offset-l2 s12">
+                 <h5 class="white-text">Links</h5>
+                 <ul>
+                   <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                   <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                   <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                   <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         <div class="footer-copyright">
+           <div class="container">
+           Design By <a class="teal-text text-lighten-3" href="https://twitter.com/gerardoepp">Gerardo Puche</a>
+           <a class="grey-text text-lighten-4 right" href="http://materializecss.com/">With Materialize </a>
+           </div>
+         </div>
+       </footer>
+    <toaster-container toaster-options="{'position-class': 'toast-top-right-full-width'}"></toaster-container>
+</body>
+
+</html>

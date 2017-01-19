@@ -1,0 +1,14 @@
+  .badge
+ {
+    /*font-size: 18px !important;
+    color:#fff !important;*/
+}
+body {
+  display: flex !important;
+  min-height: 100vh !important;
+  flex-direction: column !important;
+}
+
+main {
+  flex: 1 0 auto !important;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "dependencies" : {
+  "body-parser"    : "^1.4.3",
+  "express"        : "^4.13.4",
+  "method-override": "^2.1.3",
+  "mongoose"       : "^4.4.12",
+  "morgan"         : "^1.1.1"
+},
+  "author": "Gerardo Puche",
+  "license": "ISC"
+}
